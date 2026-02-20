@@ -1,3 +1,9 @@
 /api_tasks.json
 /tasks.json
 /__pycache__
+/.env
+/.env.*
+*.pyc 
+.venv/
+venv
+.idea/

@@ -1,12 +1,22 @@
 import asyncio
+import os
 import aiohttp
 from aiogram import Bot, Dispatcher, types
 from aiogram.filters import Command
 from aiogram.types import Message, CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup, KeyboardButton
 from aiogram import F
 from datetime import datetime
+from dotenv import load_dotenv
 
-API_TOKEN = "8571820554:AAFuvPpbdK4jewtTMvaWon4ScSn5r4A_fIE"
+load_dotenv()
+API_TOKEN = os.getenv("BOT_TOKEN")
+
+if not API_TOKEN:
+    print("Error: bot token not found")
+else:
+    print("Bot token loaded successfully")
+
+
 API_BASE_URL = "http://127.0.0.1:8000"
 
 bot = Bot(token=API_TOKEN)
